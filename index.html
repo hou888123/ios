@@ -6,11 +6,20 @@
     <title>Document</title>
 </head>
 <style>
-    .list-brace {
-        content: '(' counter(list-item) ')';
-        list-style: none;
-        list-style-type: none;
-    }
+    menu, ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+    .list-decimal {
+    list-style-type: decimal;
+}
+    .list-brace>li::marker {
+    content: "(" counter(list-item) ")";
+}
+    .list-none {
+    list-style-type: none;
+}
 </style>
 <body>
     <ol class="list-decimal ps-[29px]  my-4">
