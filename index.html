@@ -8,14 +8,17 @@
 <style>
     .list-brace {
         content: '(' counter(list-item) ')';
+        list-style: none;
+        list-style-type: none;
     }
 </style>
 <body>
-    <div class="list-brace">
-
-        <ol><li>
-            test
-        </li></ol>
-    </div>
+    <ol class="list-decimal ps-[29px]  my-4">
+    <li class="mb-2.5 ps-[5px]">123</li>
+    <ul class="list-none list-brace ps-[29px]">
+        <li class="mb-2.5 ps-[5px]">456</li>
+        <li class="mb-2.5 ps-[5px]">789</li>
+    </ul>
+</ol>
 </body>
 </html>
