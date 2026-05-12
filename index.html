@@ -14,8 +14,26 @@
     .list-decimal {
     list-style-type: decimal;
 }
-    .list-brace>li::marker {
-    content: "(" counter(list-item) ")";
+ /* 1. 隱藏原本的清單符號 */
+.list-brace {
+    list-style: none;
+    counter-reset: brace-counter; /* 重置計數器 */
+    padding-left: 20px; 
+}
+
+/* 2. 針對每一個 li 進行計數 */
+.list-brace > li {
+    counter-increment: brace-counter; /* 增加計數器數值 */
+    position: relative;
+}
+
+/* 3. 使用 ::before 模擬標號 */
+.list-brace > li::before {
+    content: '(' counter(brace-counter) ') ';
+    position: absolute;
+    left: -25px; /* 根據需求調整位置 */
+    display: inline-block;
+    width: 20px;
 }
     .list-none {
     list-style-type: none;
